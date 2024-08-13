@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### step 1: connect wallet using metamask
+### step 2: check balance of any address on ethereum chain for those tokens that are available in drop-down
+### step 3: for trasnfer token I used WETH token from Sepolia chain to transfer the token you can use the same
