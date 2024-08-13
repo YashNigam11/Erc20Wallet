@@ -79,3 +79,13 @@ Material-UI
 ### step 1: connect wallet using metamask
 ### step 2: check balance of any address on ethereum chain for those tokens that are available in drop-down
 ### step 3: for trasnfer token I used WETH token from Sepolia chain to transfer the token you can use the same
+
+## Screenshots
+
+### Displaying Token Balance
+![Display Balance](/src/screenshots/ss-1.png)
+![Balance Before Transfer for acc-1](/src/screenshots/ss-2.png)
+![Balance Before Transfer for acc-2](/src/screenshots/ss-3.png)
+![While Trxn](/src/screenshots/ss-4.png)
+![After Trxn Completed](/src/screenshots/ss-5.png)
+![Balance After Trxn](/src/screenshots/ss-6.png)

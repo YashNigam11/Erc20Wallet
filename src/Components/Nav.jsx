@@ -13,6 +13,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import LOGO from "../assets/logo.png"
 import Drop from "../assets/Frame.png"
 import Link from '@mui/material/Link';
+import { Share as ShareIcon } from '@mui/icons-material';
 const Navbar = () => {
   const auth = useAuth()
   // const classes = useStyles()
@@ -39,8 +40,8 @@ const Navbar = () => {
           <Link color="inherit" underline="none" style={{ fontSize: "18px" }}>
             Home
           </Link>
-          <Link color="inherit" underline="none" endIcon={<LinkIcon />} style={{ fontSize: "18px" }}>
-            Demeter
+          <Link color="inherit" underline="none"  style={{ fontSize: "18px" ,display:"flex" }}>
+            Demeter<ShareIcon />
           </Link>
           <Link color="inherit" underline="none" style={{ fontSize: "18px" }}>Buyback</Link>
           <Link color="inherit" underline="none" style={{ fontSize: "18px" }}>Stake</Link>
@@ -49,11 +50,12 @@ const Navbar = () => {
           <Link
             color="inherit"
             underline="none"
-            endIcon={<ArrowDropDownIcon />}
+           
             onClick={handleMoreClick}
-            style={{ fontSize: "18px" }}
+            style={{ fontSize: "18px" ,display:"flex" }}
           >
             More
+            <ArrowDropDownIcon />
           </Link>
           <Menu
             anchorEl={anchorEl}
@@ -77,11 +79,11 @@ const Navbar = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 8,
-                    borderRadius: '10px',
+                    borderRadius: '20px',
                     border: 'none',
                     background: '#31C1BF',
                     boxShadow: '0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12)',
-                    color: '#DFDEDF',
+                    color: '#FFFFFF',
                     userSelect: 'none',
 
                   }}
@@ -90,13 +92,15 @@ const Navbar = () => {
                 </button>
               </div>
 
-              <Link color="inherit" underline="none" endIcon={<ArrowDropDownIcon />} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <div style={{ border: "1px solid black", width: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: 10, }}>
-                  <div style={{ marginRight: 5 }}>
+              <Link color="inherit" underline="none"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <div style={{ border: "1px solid grey", width: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: 20, }}>
+                  <div style={{ marginRight: 5 ,marginTop:3 }}>
                     <img src={Drop} alt="Drop" />
                   </div>
-                  <div>
-                    11155111
+                  <div style={{fontSize:20 }} >
+                    0
+                    <span style={{marginTop:3 }}><ArrowDropDownIcon /></span>
+                    
                   </div>
                 </div>
 
@@ -108,11 +112,11 @@ const Navbar = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 8,
-                    borderRadius: '10px',
+                    borderRadius: '20px',
                     border: 'none',
                     background: '#31C1BF',
                     boxShadow: '0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12)',
-                    color: '#DFDEDF',
+                    color: '#FFFFFF',
                   }}
                   onClick={login}
                 >
@@ -126,7 +130,7 @@ const Navbar = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 8,
-                    borderRadius: '10px',
+                    borderRadius: '12px',
                     border: 'none',
                     background: '#31C1BF',
                     boxShadow: '0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12)',

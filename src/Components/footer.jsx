@@ -41,9 +41,10 @@ const Footer = () => {
                             variant="contained"
 
                             href="#"
-                            sx={{ border: "1px solid #E7ECEF", background: "#E7ECEF", color: "black" }}
+                            sx={{ border: "1px solid #E7ECEF", background: "#E7ECEF", color: "black", }}
+                          
                         >
-                            Snapshot
+                            Snap
                         </Button>
                         </Box>
                     </Grid>
@@ -100,7 +101,7 @@ const Footer = () => {
                              <CopyIcon />
                             </IconButton>
                         </Box>
-                        <Box style={{marginLeft: 70}}>
+                        <Box style={{marginLeft: 80}}>
                         <Link href="#" color="inherit" underline="none" display="block" textAlign="inherit">
                             <img
                                 src={Fram1}
@@ -203,7 +204,7 @@ const Footer = () => {
                                 <CopyIcon />
                             </IconButton>
                         </Box>
-                        <Box marginLeft={8}>
+                        <Box marginLeft={9}>
                         <div style={{ marginTop: 10, fontSize: "18px" }}>
                             {`SPA -> wSPA`}
                         </div>
