@@ -7,7 +7,7 @@ const BalanceForm = ({ getBalance }) => {
     const [balance, setBalance] = useState(0.00);
     const [error, setError] = useState('');
     const [tokenAddress, setTokenAddress] = useState('');
-
+    // erc20 abi use to fetch the fxns 
     const ERC20_ABI = [
         {
             "constant": true,
@@ -27,7 +27,7 @@ const BalanceForm = ({ getBalance }) => {
             "type": "function"
         }
     ];
-
+    // tokens listed in the drop down menu
     const TOKENS = [
         { name: 'USDT (Tether)', address: '0xdac17f958d2ee523a2206206994597c13d831ec7' },
         { name: 'USDC (USD Coin)', address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48' },
@@ -39,33 +39,36 @@ const BalanceForm = ({ getBalance }) => {
     ];
 
 
-
+    // Function to get ERC20 token balance
     const fetchBalance = async (address, tokenAddress) => {
-
+        // Create a new instance of the Web3 contract
         const web3 = new Web3('https://eth.llamarpc.com');
 
 
 
         let contract = new web3.eth.Contract(ERC20_ABI, tokenAddress);
+        // Call the balanceOf function from the ERC20 contract
         const balance = await contract.methods.balanceOf(address).call();
-        console.log(balance, "balance")
-        const gasEstimate = await contract.methods.balanceOf(address).estimateGas();
 
+        // Convert the balance from Wei to Ether (adjust this according to the token's decimals)
         const formatBalacne = (web3.utils.fromWei(balance.toString(), "ether"))
         return formatBalacne
     };
-
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError('');
-        setBalance(null);
+        e.preventDefault(); // Prevents the default form submission behavior
+        setError(''); // Clears any previous error messages
+        setBalance(null); // Resets the balance state to null
+    
         try {
+            // Attempts to fetch the token balance
             const balance = await fetchBalance(address, tokenAddress);
-            setBalance(balance);
+            setBalance(balance); // Updates the balance state with the fetched value
         } catch (err) {
+            // Handles errors that occur during balance fetching
             setError('Failed to fetch balance. Please check the address and try again.');
         }
     };
+    
 
     return (
         <>
@@ -125,7 +128,7 @@ const BalanceForm = ({ getBalance }) => {
                             ))}
                         </Select>
                     </FormControl>
-                  
+
                     <Box mt={2}>
                         <Button type="submit" variant="contained" style={
                             {

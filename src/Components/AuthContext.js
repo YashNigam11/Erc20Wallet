@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
     const init = async()=>{
         if (window.ethereum) {
             const web3 = new Web3(window.ethereum);
+            // establish connection with your wallet
             try {
                 const accounts = await web3.eth.getAccounts();
                 await window.ethereum.request({ method: "eth_requestAccounts" })

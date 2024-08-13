@@ -17,10 +17,11 @@ const TransferForm = () => {
 
     let fromAddress = address;
     let toAddress = recipient;
-    console.log(fromAddress,"fromeADress")
+   
+    // added try catch for error Handling 
     try {
       let res = await transferToken(fromAddress, toAddress, amount);
-      console.log("Transfer successful:", res,res.transactionHash);
+   
       if(res.transactionHash){
         setComplete(true)
         setTrxnSucess("SuccessFull Trxn Completed")
